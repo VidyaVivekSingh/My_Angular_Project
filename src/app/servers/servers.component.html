@@ -1,0 +1,32 @@
+<label>Server Name</label>
+<!-- <input 
+type="text" 
+class="form-control"
+(input)="onUpdateServerName($event)"
+> -->
+
+<!--two way binding with property and event binding-->
+<input 
+type="text" 
+class="form-control"
+[(ngModel)]="serverName" 
+>
+
+<button class="btn btn-primary" [disabled]="!addServer" (click)="onServerCreation()">Add Server</button>
+<p *ngIf="serverCreated; else noServer">Server {{serverName}} Created Successfully..!</p>
+<ng-template #noServer><p>No Server is Created..!</p></ng-template>
+
+<!--String Interpolation-->
+<!-- <p>{{addServer}}</p>  -->
+<!-- <p>{{serverName}}</p> -->
+
+<!--Property binding--><!--A way to use property binding instead of string interpolation-->
+<!-- <p [innerText]="addServer"></p> -->
+
+<!-- <p>{{serverCreationStatus}}</p> -->
+
+<app-server *ngFor="let server of servers"></app-server>
+
+<app-user></app-user>
+<hr>
+<app-password></app-password>

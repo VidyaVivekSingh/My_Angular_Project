@@ -1,0 +1,6 @@
+<!-- String Interpolation -->
+<!-- <p>This is Server Component with id {{serverId}} and status {{serverStatus}}</p> -->
+
+<!-- String Interpolation with function passed-->
+<p [ngStyle] = "{backgroundColor : getColor()}"
+[ngClass]="{online : serverStatus === 'Online'}">This is Server Component with id {{serverId}} and status {{getServerStatus()}}</p>

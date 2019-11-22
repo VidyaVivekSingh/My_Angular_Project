@@ -1,0 +1,12 @@
+<label>User Name</label>
+
+<!--two way binding with property and event binding-->
+<input 
+type="text" 
+class="form-control"
+[(ngModel)]="userName" 
+>
+<p>{{userName}}</p>
+
+<button class="btn btn-primary" [disabled]="!userName" (click)="onAddUser($event)">Add User</button>
+
